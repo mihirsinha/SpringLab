@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+    <bean id="hello" class="com.abc.springcore.bean.HelloBean">  
+       <property name="message" value="Spring world!"></property>
+    </bean>
+
+     <bean id="hi" class="com.abc.springcore.bean.MessageBean">  
+       <property name="msg" value="Spring IOC"></property>
+    </bean> 
+    <bean id="circle" class="com.abc.springcore.bean.Circle">
+       <!--  <property name="radius" value="8"></property>  -->
+        <constructor-arg value="8"/>
+    </bean>
+ 
+    <bean id="rectangle" class="com.abc.springcore.bean.Rectangle">
+        <property name="length" value="4"></property>
+        <property name="breadth" value="8"></property>
+    </bean>
+ 
+    <bean id="shapeArea" class="com.abc.springcore.bean.ShapeArea">
+        <!--<property name="shape" ref="rectangle"></property>  -->
+        <constructor-arg ref="circle"/>
+    </bean>
+ 
+
+</beans>
